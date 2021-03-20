@@ -1,1 +1,69 @@
-/*Maak hier jouw CSS!*/
+/*Kleiner dan 576px, dus mobiel*/
+.grid-container {
+    display: grid;
+    background-color: #D9DBF1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    gap: 16px;
+    grid-template-areas:
+    "header-a"
+    "main-b"
+    "aside-c"
+    "section-d"
+    "article-e"
+    "footer-f";
+}
+/*tablets and desktops*/
+@media screen and (min-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+    "header-a aside-c aside-c"
+    "main-b aside-c aside-c"
+    "main-b article-e section-d"
+    "main-b article-e . "
+    "footer-f footer-f footer-f";
+    }
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    color: hsl(0, 0%, 0%);
+}
+
+#grid-header-a {
+    background-color: #D0CDD7;
+    grid-area: header-a;
+}
+
+#grid-main-b {
+    background-color: #ACB0BD;
+    grid-area: main-b;
+}
+
+#grid-aside-c {
+    background-color: #416165;
+    grid-area: aside-c;
+}
+
+#grid-section-d {
+    background-color: #D0CDD7;
+    grid-area: section-d;
+    grid-auto-rows: 100px;
+}
+
+#grid-article-e {
+    background-color: #ACB0BD;
+    grid-area: article-e;
+}
+
+#grid-footer-f {
+    background-color: #0B3948;
+    color: #fff;
+    grid-area: footer-f;
+}
+
